@@ -1,22 +1,29 @@
 #include "libft.h"
 
-size_t	ft_strslen(char *s, char c)
+size_t	ft_wordcount(char *s, char c)
 {
 	size_t	len;
 	size_t	i;
+	size_t	wordcount;
 
 	len = 0;
 	i = 0;
+	wordcount = 0;
 	while (s[i])
 	{
-		if (s[i] == c && s[i] != s[i + 1])
+		if (s[i] != c && wordcount == 0)
+		{
+			wordcount = 1;
 			len++;
+		}
+		else if(s[i] == c)
+			wordcount = 0;
 		i++;
 	}
 	return (len);
 }
 
-void	*ft_free(char **liststr)
+void	*ft_freelist(char **liststr)
 {
 	size_t	i;
 
@@ -39,20 +46,20 @@ char	**ft_split(char const *s, char c)
 
 	if (s == NULL)
 		return (NULL);
-	result = (char **) ft_calloc((ft_strslen((char *) s, c) + 2), sizeof(char *));
+	result = (char **) ft_calloc((ft_wordcount((char *) s, c) + 1), sizeof(char *));
 	i = 0;
-	start = 0;
 	j = 0;
+	start = 0;
 	while (i <= ft_strlen((char *) s))
 	{
-		if ((s[i] == c && s[i] != s[i + 1]) || s[i] == '\0')
+		if ((s[i] == c && s[i + 1] != c) || s[i] == '\0')
 		{
 			result[j] = ft_substr((char *) s,start,i - start);
 			if (result[j] == NULL)
-				return (ft_free(result));
-			start = i + 1;
+				return (ft_freelist(result));
 			j++;
 			i++;
+			start = i;
 		}
 		i++;
 	}
@@ -61,8 +68,9 @@ char	**ft_split(char const *s, char c)
 int main()
 {
 	// char x[] = "hello everyone my mane is Mohsine";
-	char **y=ft_split("mymnamemis  mm Mohsine",'m');
+	char **y=ft_split("my name is mohsine and I dont give a daaaaaaamn and I also have a really reaaly reaaeaeaeaeaeealy good looking feriend ",' ');
 	size_t i =0;
+	// printf("the word count is: %zu\n", ft_strslen("  my name is mohsine and I dont give a daaaaaaamn and I also have a really reaaly reaaeaeaeaeaeealy good looking feriend ",' '));
 	if (y != NULL)
 	{
 		while (y[i])
