@@ -9,6 +9,8 @@ size_t	ft_wordcount(char *s, char c)
 	len = 0;
 	i = 0;
 	wordcount = 0;
+
+	
 	while (s[i])
 	{
 		if (s[i] != c && wordcount == 0)
