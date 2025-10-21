@@ -6,7 +6,7 @@
 /*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 11:58:50 by mezzaidi          #+#    #+#             */
-/*   Updated: 2025/10/21 10:21:00 by mezzaidi         ###   ########.fr       */
+/*   Updated: 2025/10/21 23:50:44 by mezzaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr[i] = '\0';
 	return substr;
 }
-// int main(int argc, char const *argv[])
-// {
-// 	printf("test for substr: %s\n",ft_substr("012345678",0,5));
-// 	return 0;
-// }
+int main(int argc, char const *argv[])
+{
+	char *
+	char *x = ft_substr(0,0,0);
+	printf("the result is %p\n",x);
+	return 0;
+}
 
