@@ -6,7 +6,7 @@
 /*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 21:27:57 by mezzaidi          #+#    #+#             */
-/*   Updated: 2025/10/17 21:38:45 by mezzaidi         ###   ########.fr       */
+/*   Updated: 2025/10/22 09:27:16 by mezzaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 int	ft_isdigit(int c)
 {
-	if ((c >= '0') && (c <= '9'))
+	unsigned char	x;
+
+	x = (unsigned char) c;
+	if ((x >= '0') && (x <= '9'))
 		return (1);
 	return (0);
 }

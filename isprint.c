@@ -6,7 +6,7 @@
 /*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 21:54:44 by mezzaidi          #+#    #+#             */
-/*   Updated: 2025/10/17 21:55:13 by mezzaidi         ###   ########.fr       */
+/*   Updated: 2025/10/22 10:31:39 by mezzaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 int	ft_isprint(int c)
 {
-	if (c >= 32 && c < 127)
+	unsigned char	x;
+
+	x = (unsigned char) c;
+	if (x >= 32 && x < 127)
 		return (1);
 	return (0);
 }

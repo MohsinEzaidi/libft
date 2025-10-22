@@ -6,7 +6,7 @@
 /*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 17:44:10 by mezzaidi          #+#    #+#             */
-/*   Updated: 2025/10/18 17:45:37 by mezzaidi         ###   ########.fr       */
+/*   Updated: 2025/10/22 22:09:05 by mezzaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,5 @@ void	*ft_memmove(void *dst, void *src, size_t len)
 	else if (temdst > temsrc)
 		while (len--)
 			temdst[len] = temsrc[len];
-	else
-		return (dst);
 	return (dst);
 }

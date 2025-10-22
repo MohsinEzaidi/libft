@@ -6,7 +6,7 @@
 /*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:20:33 by mezzaidi          #+#    #+#             */
-/*   Updated: 2025/10/18 15:22:24 by mezzaidi         ###   ########.fr       */
+/*   Updated: 2025/10/22 17:17:01 by mezzaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_bzero(void *s, size_t n)
 	size_t			i;
 	unsigned char	*p;
 
+	if (n == 0)
+		return;
 	p = (unsigned char *) s;
 	i = 0;
 	while (i < n)

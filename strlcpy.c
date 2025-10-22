@@ -6,18 +6,18 @@
 /*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 09:17:21 by mezzaidi          #+#    #+#             */
-/*   Updated: 2025/10/18 20:53:59 by mezzaidi         ###   ########.fr       */
+/*   Updated: 2025/10/22 19:17:30 by mezzaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t size)
+size_t ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t	lensrc;
-	size_t	i;
+	size_t lensrc;
+	size_t i;
 
-	lensrc = ft_strlen((char *) src);
+	lensrc = ft_strlen((char *)src);
 	i = 0;
 	if (size > 0)
 	{
