@@ -6,7 +6,7 @@
 /*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 09:08:49 by mezzaidi          #+#    #+#             */
-/*   Updated: 2025/10/22 19:17:30 by mezzaidi         ###   ########.fr       */
+/*   Updated: 2025/10/23 08:28:27 by mezzaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 void ft_bzero(void *s, size_t n);
 int ft_atoi(char *str);
 void ft_bzero(void *s, size_t n);
-void *ft_calloc(size_t count, size_t size);
+void	*ft_calloc(size_t count, size_t size);
 int ft_isalnum(int c);
 int ft_isalpha(int c);
 int ft_isascii(int c);

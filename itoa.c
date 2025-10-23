@@ -1,69 +1,69 @@
 #include "libft.h"
 
-int ft_coutdigits(int n)
+int	ft_countdigits(int n)
 {
-	int count;
+	int	count;
 
 	if (n == 0)
-		return 1;
+		return (1);
 	count = 0;
 	while (n > 0)
 	{
 		n = n / 10;
 		count++;
 	}
-	return count;
+	return (count);
 }
-int ft_checknumber(int n)
+char	*ft_fillresult(int n, char *result, int count, int sign)
 {
-	int tem;
+	int	tem;
+	int	i;
 
-	tem = n * 10;
-	if (n != (tem / 10))
-		return -1;
-	if (ft_coutdigits(n) == 0)
-		return -1;
-	return n;
-}
-char *ft_fillresult(int n, char *result, int count)
-{
-	int tem;
-	while (count--)
+	i = 0;
+	if (sign == -1)
 	{
-		tem = n % 10;
+		i = 1;
+		result[0] = '-';
+	}
+	result[count] = '\0';
+	while (count - 1 >= i)
+	{
+		result[count - 1] = n % 10 + '0';
 		n = n / 10;
-		result[count] = tem + '0';
-		ft_fillresult(n, result, count);
+		count--;
 	}
 	return result;
 }
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	int tem;
-	int i;
-	char *result;
-	int sign;
+	int	tem;
+	int	totallen;
+	char	*result;
+	int	sign;
 
 	if (n == -2147483648)
-		return "-2147483648";
-	// if (n == 2147483647)
-	// 	return "-2147483648";
+		return (ft_strdup("-2147483648"));
+	sign = 0;
+	if (n == 0)
+		return (ft_strdup("0"));
 	if (n < 0)
 	{
 		sign = -1;
 		n = -n;
 	}
-	tem = ft_checknumber(n);
-	if (tem == -1)
-		return NULL;
-	result = malloc(ft_coutdigits(n));
-	if(result == NULL)
-		return NULL;
-	result = ft_fillresult(n, result, ft_coutdigits(n));
-	return result;
+	if(sign == -1)
+		totallen = ft_countdigits(n) + 2;
+	else
+		totallen = ft_countdigits(n) + 1;
+	result = malloc(totallen);
+	if (result == NULL)
+		return (NULL);
+	
+	result = ft_fillresult(n, result, totallen - 1, sign);
+	return (result);
 }
 int main(int argc, char const *argv[])
 {
-	printf("the result is: %s\n",ft_itoa(2147483646));
+	printf("the result is: %s\n",ft_itoa(-1337));
 	return 0;
 }
