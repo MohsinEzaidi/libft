@@ -6,7 +6,7 @@
 /*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 09:08:49 by mezzaidi          #+#    #+#             */
-/*   Updated: 2025/10/23 08:28:27 by mezzaidi         ###   ########.fr       */
+/*   Updated: 2025/10/25 20:16:29 by mezzaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,15 @@ int ft_tolower(char c);
 int ft_toupper(char c);
 char *ft_substr(char const *s, unsigned int start, size_t len);
 char *ft_strtrim(char const *s1, char const *set);
+
+typedef struct s_list
+{
+void *content;
+struct s_list *next;
+} t_list;
+
+t_list *ft_lstnew(void *content);
+void ft_lstadd_front(t_list **lst, t_list *new);
+int ft_lstsize(t_list *lst);
 
 #endif

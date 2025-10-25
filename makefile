@@ -1,70 +1,71 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/10/22 by mezzaidi               #+#    #+#                  #
-#                                                 ###   ########.fr            #
+#    Created: 2025/10/25 11:04:02 by mezzaidi          #+#    #+#              #
+#    Updated: 2025/10/25 13:06:53 by mezzaidi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME = libft
 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-AR = ar rcs
-RM = rm -f
+CC = CC
 
-SRCDIR = .
-OBJDIR = obj
+FLAGS = -Wall -Wextra -Werror
 
-SOURCES = atoi.c \
-          bzero.c \
-          calloc.c \
-          isalnum.c \
-          isalpha.c \
-          isascii.c \
-          isdigit.c \
-          isprint.c \
-          memchr.c \
-          memcmp.c \
-          memcpy.c \
-          memmove.c \
-          memset.c \
-          split.c \
-          strchr.c \
-          strdup.c \
-          strjoin.c \
-          strlcat.c \
-          strlcpy.c \
-          strlen.c \
-          strncmp.c \
-          strnstr.c \
-          strrchr.c \
-          strtrim.c \
-          substr.c \
-          tolower.c \
-          toupper.c
+SRC = ft_atoi.c\
+        ft_bzero.c\
+        ft_calloc.c\
+        ft_isalnum.c\
+        ft_isalpha.c\
+        ft_isascii.c\
+        ft_isdigit.c\
+        ft_isprint.c\
+        ft_itoa.c\
+        ft_memchr.c\
+        ft_memcmp.c\
+        ft_memcpy.c\
+        ft_memmove.c\
+        ft_memset.c\
+        ft_putchar_fd.c\
+        ft_putendl_fd.c\
+        ft_putnbr_fd.c\
+        ft_putstr_fd.c\
+        ft_split.c\
+        ft_strchr.c\
+        ft_strdup.c\
+        ft_striteri.c\
+        ft_strjoin.c\
+        ft_strlcat.c\
+        ft_strlcpy.c\
+        ft_strlen.c\
+        ft_strmapi.c\
+        ft_strncmp.c\
+        ft_strnstr.c\
+        ft_strrchr.c\
+        ft_strtrim.c\
+        ft_substr.c\
+        ft_tolower.c\
+        ft_toupper.c\
 
-OBJECTS = $(SOURCES:%.c=$(OBJDIR)/%.o)
+OBJ = $(SRC:.c=.o)
 
-all: $(NAME)
+    
+all : $(NAME)
 
-$(NAME): $(OBJECTS)
-	$(AR) $(NAME) $(OBJECTS)
+$(NAME) : $(OBJ)
+    $(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.c
-	@mkdir -p $(OBJDIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+bonus : $(BONUSE)
 
-clean:
-	$(RM) -r $(OBJDIR)
+clean :
+    rem -f$(OBJ)
 
-fclean: clean
-	$(RM) $(NAME)
+fclean :
+    rem -f$(NAME) $(OBJ)
 
-re: fclean all
-
-.PHONY: all clean fclean re
+re :
+    fclean all

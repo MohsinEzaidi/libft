@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bzero.c                                            :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/18 15:20:33 by mezzaidi          #+#    #+#             */
-/*   Updated: 2025/10/22 17:17:01 by mezzaidi         ###   ########.fr       */
+/*   Created: 2025/10/25 12:11:59 by mezzaidi          #+#    #+#             */
+/*   Updated: 2025/10/25 12:14:21 by mezzaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+t_list *ft_lstnew(void *content)
 {
-	size_t			i;
-	unsigned char	*p;
+	t_list *new_node;
 
-	if (n == 0)
-		return;
-	p = (unsigned char *) s;
-	i = 0;
-	while (i < n)
-	{
-		p[i] = 0;
-		i++;
-	}
+	new_node = (t_list *) ft_calloc(1, sizeof(t_list));
+	new_node -> content = content;
+	new_node -> next = NULL;
+	return (new_node);
 }

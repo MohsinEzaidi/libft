@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calloc.c                                           :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:02:35 by mezzaidi          #+#    #+#             */
-/*   Updated: 2025/10/18 22:02:43 by mezzaidi         ###   ########.fr       */
+/*   Updated: 2025/10/25 12:21:35 by mezzaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*r;
+	void	*result;
 
-	r = malloc(count * size);
-	if (r == NULL || (count == 0 || size == 0))
+	if (size != 0 && count > INT_MAX / size)
 		return (NULL);
-	if ((count * size / 10) != (count * size / 10))
+	result = malloc(count * size);
+	if (result == NULL)
 		return (NULL);
-	return (ft_memset(malloc(count * size), 0, count));
+	ft_bzero(result, count * size);
+	return (result);
 }
