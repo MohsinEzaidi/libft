@@ -6,7 +6,7 @@
 #    By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/25 11:04:02 by mezzaidi          #+#    #+#              #
-#    Updated: 2025/10/25 13:06:53 by mezzaidi         ###   ########.fr        #
+#    Updated: 2025/10/26 12:11:56 by mezzaidi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,16 +51,25 @@ SRC = ft_atoi.c\
         ft_tolower.c\
         ft_toupper.c\
 
+BONUSE = ft_lstadd_back.c\
+          ft_lstadd_front.c\
+          ft_lstclear.c\
+          ft_lstdelone.c\
+          ft_lstiter.c\
+          ft_lstlast.c\
+          ft_lstmap.c\
+          ft_lstnew.c\
+          ft_lstsize.c
+          
 OBJ = $(SRC:.c=.o)
-
-    
+BONUSE_OBJ = $(BONUSE:.c=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJ)
     $(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
 bonus : $(BONUSE)
-
+    $(CC) $(FLAGS) $(BONUSE_OBJ) -o $(NAME)
 clean :
     rem -f$(OBJ)
 

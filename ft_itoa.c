@@ -58,7 +58,6 @@ char	*ft_itoa(int n)
 	result = malloc(totallen);
 	if (result == NULL)
 		return (NULL);
-	
 	result = ft_fillresult(n, result, totallen - 1, sign);
 	return (result);
 }
