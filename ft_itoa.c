@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/27 00:03:04 by mezzaidi          #+#    #+#             */
+/*   Updated: 2025/10/27 00:19:07 by mezzaidi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_countdigits(int n)
@@ -14,9 +26,9 @@ int	ft_countdigits(int n)
 	}
 	return (count);
 }
+
 char	*ft_fillresult(int n, char *result, int count, int sign)
 {
-	int	tem;
 	int	i;
 
 	i = 0;
@@ -32,14 +44,14 @@ char	*ft_fillresult(int n, char *result, int count, int sign)
 		n = n / 10;
 		count--;
 	}
-	return result;
+	return (result);
 }
+
 char	*ft_itoa(int n)
 {
-	int	tem;
-	int	totallen;
+	int		totallen;
 	char	*result;
-	int	sign;
+	int		sign;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
@@ -51,7 +63,7 @@ char	*ft_itoa(int n)
 		sign = -1;
 		n = -n;
 	}
-	if(sign == -1)
+	if (sign == -1)
 		totallen = ft_countdigits(n) + 2;
 	else
 		totallen = ft_countdigits(n) + 1;
@@ -60,9 +72,4 @@ char	*ft_itoa(int n)
 		return (NULL);
 	result = ft_fillresult(n, result, totallen - 1, sign);
 	return (result);
-}
-int main(int argc, char const *argv[])
-{
-	printf("the result is: %s\n",ft_itoa(-1337));
-	return 0;
 }

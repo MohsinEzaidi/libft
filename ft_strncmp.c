@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strncmp.c                                          :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 11:53:36 by mezzaidi          #+#    #+#             */
-/*   Updated: 2025/10/18 11:54:28 by mezzaidi         ###   ########.fr       */
+/*   Updated: 2025/10/27 01:13:45 by mezzaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
-	char	*str1;
-	char	*str2;
+	size_t			i;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
-	str1 = (char *)s1;
-	str2 = (char *)s2;
+	str1 = (unsigned char *) s1;
+	str2 = (unsigned char *) s2;
 	i = 0;
 	while (i < n && (str1[i] || str2[i]))
 	{

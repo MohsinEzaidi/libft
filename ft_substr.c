@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   substr.c                                           :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 11:58:50 by mezzaidi          #+#    #+#             */
-/*   Updated: 2025/10/21 23:54:15 by mezzaidi         ###   ########.fr       */
+/*   Updated: 2025/10/27 15:04:42 by mezzaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	lenstart;
 	size_t	i;
 
-	if(!s)
-		return NULL;
-	if (start > ft_strlen((char *)s))
-		return ft_strdup("");
-	lenstart = ft_strlen((char *) s + start);
-	if (len >lenstart)
+	if (!s)
+		return (NULL);
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
+	lenstart = ft_strlen(s + start);
+	if (len > lenstart)
 		len = lenstart;
 	substr = malloc(len + 1);
 	if (!substr)
-		return NULL;
+		return (NULL);
 	i = 0;
 	while (i < len)
 	{
@@ -35,13 +35,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		i++;
 	}
 	substr[i] = '\0';
-	return substr;
+	return (substr);
 }
-int main(int argc, char const *argv[])
-{
-	char *
-	char *x = ft_substr(0,0,0);
-	printf("the result is %p\n",x);
-	return 0;
-}
-

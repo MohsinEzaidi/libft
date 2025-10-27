@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/27 00:11:27 by mezzaidi          #+#    #+#             */
+/*   Updated: 2025/10/27 14:56:59 by mezzaidi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 size_t	ft_wordcount(char *s, char c)
@@ -9,8 +21,6 @@ size_t	ft_wordcount(char *s, char c)
 	len = 0;
 	i = 0;
 	wordcount = 0;
-
-	
 	while (s[i])
 	{
 		if (s[i] != c && wordcount == 0)
@@ -18,7 +28,7 @@ size_t	ft_wordcount(char *s, char c)
 			wordcount = 1;
 			len++;
 		}
-		else if(s[i] == c)
+		else if (s[i] == c)
 			wordcount = 0;
 		i++;
 	}
@@ -44,45 +54,26 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 	size_t	j;
 	size_t	start;
-	char	**result;
+	char	**res;
 
 	if (s == NULL)
 		return (NULL);
-	result = (char **) ft_calloc((ft_wordcount((char *) s, c) + 1), sizeof(char *));
+	res = (char **)ft_calloc((ft_wordcount((char *)s, c) + 1), sizeof(char *));
 	i = 0;
 	j = 0;
 	start = 0;
-	while (i <= ft_strlen((char *) s))
+	while (i <= ft_strlen(s))
 	{
 		if ((s[i] == c && s[i + 1] != c) || s[i] == '\0')
 		{
-			result[j] = ft_substr((char *) s,start,i - start);
-			if (result[j] == NULL)
-				return (ft_freelist(result));
+			res[j] = ft_substr((char *) s, start, i - start);
+			if (res[j] == NULL)
+				return (ft_freelist(res));
 			j++;
 			i++;
 			start = i;
 		}
 		i++;
 	}
-	return (result);
-}
-int main()
-{
-	// char x[] = "hello everyone my mane is Mohsine";
-	char **y=ft_split("my name is mohsine and I dont give a daaaaaaamn and I also have a really reaaly reaaeaeaeaeaeealy good looking feriend ",' ');
-	size_t i =0;
-	// printf("the word count is: %zu\n", ft_strslen("  my name is mohsine and I dont give a daaaaaaamn and I also have a really reaaly reaaeaeaeaeaeealy good looking feriend ",' '));
-	if (y != NULL)
-	{
-		while (y[i])
-		{
-			printf("result[%zu] ==> %s\n",i,y[i]);
-			i++;
-		}
-	}
-	else
-		printf("the result is NULL\n");
-	
-	return 0;
+	return (res);
 }

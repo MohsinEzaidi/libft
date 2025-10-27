@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoi.c                                             :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 08:34:22 by mezzaidi          #+#    #+#             */
-/*   Updated: 2025/10/19 23:22:55 by mezzaidi         ###   ########.fr       */
+/*   Updated: 2025/10/27 14:22:05 by mezzaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int	ft_checksign(char c)
 	return (1);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(char const *str)
 {
 	int		sign;
-	int		r;
+	long	r;
 	size_t	i;
 
 	r = 0;
@@ -35,7 +35,7 @@ int	ft_atoi(char *str)
 	while (ft_isdigit(str[i]))
 	{
 		r = (r * 10) + (str[i] - '0');
-		if (r != (((r * 10) + (str[i] - '0')) / 10))
+		if ((r * sign) > INT_MAX || (r * sign) < INT_MIN)
 		{
 			if (sign == -1)
 				return (0);
@@ -43,5 +43,5 @@ int	ft_atoi(char *str)
 		}
 		i++;
 	}
-	return (r * sign);
+	return ((int)(r * sign));
 }
