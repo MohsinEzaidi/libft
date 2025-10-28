@@ -6,13 +6,13 @@
 /*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 17:44:10 by mezzaidi          #+#    #+#             */
-/*   Updated: 2025/10/26 17:55:12 by mezzaidi         ###   ########.fr       */
+/*   Updated: 2025/10/28 09:31:42 by mezzaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t			i;
 	unsigned char	*temdst;
