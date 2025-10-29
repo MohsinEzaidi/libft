@@ -6,7 +6,7 @@
 /*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 08:34:22 by mezzaidi          #+#    #+#             */
-/*   Updated: 2025/10/27 14:22:05 by mezzaidi         ###   ########.fr       */
+/*   Updated: 2025/10/29 12:29:53 by mezzaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ int	ft_checksign(char c)
 
 int	ft_atoi(char const *str)
 {
-	int		sign;
-	long	r;
-	size_t	i;
+	int				sign;
+	unsigned long	r;
+	unsigned long	tem;
+	size_t			i;
 
 	r = 0;
 	i = 0;
@@ -34,8 +35,9 @@ int	ft_atoi(char const *str)
 		i++;
 	while (ft_isdigit(str[i]))
 	{
+		tem = r;
 		r = (r * 10) + (str[i] - '0');
-		if ((r * sign) > INT_MAX || (r * sign) < INT_MIN)
+		if (tem != r / 10)
 		{
 			if (sign == -1)
 				return (0);
@@ -43,5 +45,5 @@ int	ft_atoi(char const *str)
 		}
 		i++;
 	}
-	return ((int)(r * sign));
+	return ((r * sign));
 }

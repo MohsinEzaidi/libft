@@ -6,77 +6,11 @@
 /*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 00:11:27 by mezzaidi          #+#    #+#             */
-/*   Updated: 2025/10/28 19:26:38 by mezzaidi         ###   ########.fr       */
+/*   Updated: 2025/10/29 12:36:02 by mezzaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// size_t	ft_wordcount(char *s, char c)
-// {
-// 	size_t	len;
-// 	size_t	i;
-// 	size_t	wordcount;
-
-// 	len = 0;
-// 	i = 0;
-// 	wordcount = 0;
-// 	while (s[i])
-// 	{
-// 		if (s[i] != c && wordcount == 0)
-// 		{
-// 			wordcount = 1;
-// 			len++;
-// 		}
-// 		else if (s[i] == c)
-// 			wordcount = 0;
-// 		i++;
-// 	}
-// 	return (len);
-// }
-
-// void	*ft_freelist(char **liststr)
-// {
-// 	size_t	i;
-
-// 	i = 0;
-// 	while (liststr[i])
-// 	{
-// 		free(liststr[i]);
-// 		i++;
-// 	}
-// 	free(liststr);
-// 	return (NULL);
-// }
-
-// char	**ft_split(char const *s, char c)
-// {
-// 	size_t	i;
-// 	size_t	j;
-// 	size_t	start;
-// 	char	**res;
-
-// 	if (s == NULL)
-// 		return (NULL);
-// 	res = (char **)ft_calloc((ft_wordcount((char *)s, c) + 1), sizeof(char *));
-// 	i = 0;
-// 	j = 0;
-// 	start = 0;
-// 	while (i <= ft_strlen(s))
-// 	{
-// 		if ((s[i] == c && s[i + 1] != c) || s[i] == '\0')
-// 		{
-// 			res[j] = ft_substr((char *) s, start, i - start);
-// 			if (res[j] == NULL)
-// 				return (ft_freelist(res));
-// 			j++;
-// 			i++;
-// 			start = i;
-// 		}
-// 		i++;
-// 	}
-// 	return (res);
-// }
 
 size_t	ft_wordcount(char const *s, char c)
 {
@@ -84,6 +18,8 @@ size_t	ft_wordcount(char const *s, char c)
 	size_t	i;
 	size_t	len;
 
+	if (c == 0)
+		return (1);
 	i = 0;
 	wordcount = 0;
 	len = ft_strlen(s);
@@ -165,16 +101,3 @@ char	**ft_split(char const *s, char c)
 	res[wordcount] = NULL;
 	return (res);
 }
-// int main() { 
-// 	char c = 0; 
-// 	printf("new\n");
-// 	char *s = "xxxhelloxxxxmyxxxxnam\0exxisxmohsinexxxan\0dxxxixxamxxboredxx"; 
-// 	size_t i = 0; 
-// 	char **res = ft_split(s, c); 
-// 	while (i < ft_wordcount(s, c)) 
-// 	{ 
-// 		printf("res[%zu] => %s\n",i, res[i]); 
-// 		i++; 
-// 	} 
-// 	return 0; 
-// }
