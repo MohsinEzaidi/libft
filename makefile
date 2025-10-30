@@ -1,6 +1,19 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/10/30 11:54:26 by mezzaidi          #+#    #+#              #
+#    Updated: 2025/10/30 13:35:50 by mezzaidi         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
 
 CC = cc
+
 AR = ar
 
 FLAGS = -Wall -Wextra -Werror
@@ -53,15 +66,13 @@ BONUS = ft_lstadd_back_bonus.c\
 OBJ = $(SRC:.c=.o)
 BONUS_OBJ = $(BONUS:.c=.o)
 
-.PHONY: all bonus clean fclean re
-
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(AR) rcs $(NAME) $(OBJ)
 
-bonus: $(OBJ) $(BONUS_OBJ)
-	$(AR) rcs $(NAME) $(OBJ) $(BONUS_OBJ)
+bonus: $(BONUS_OBJ)
+	$(AR) rcs $(NAME) $(BONUS_OBJ)
 
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
@@ -73,3 +84,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all bonus clean fclean re
