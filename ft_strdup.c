@@ -6,7 +6,7 @@
 /*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 21:32:03 by mezzaidi          #+#    #+#             */
-/*   Updated: 2025/10/27 14:57:08 by mezzaidi         ###   ########.fr       */
+/*   Updated: 2025/10/29 15:27:56 by mezzaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s1)
 	char	*dup;
 
 	i = 0;
-	dup = (char *) malloc(ft_strlen(s1) + 1);
+	dup = malloc(ft_strlen(s1) + 1);
 	if (dup == NULL)
 		return (NULL);
 	while (s1[i])

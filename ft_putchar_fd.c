@@ -6,7 +6,7 @@
 /*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 00:05:46 by mezzaidi          #+#    #+#             */
-/*   Updated: 2025/10/27 00:21:24 by mezzaidi         ###   ########.fr       */
+/*   Updated: 2025/10/29 19:58:56 by mezzaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	if (fd < 0)
+	if (write(fd, NULL, 0) == -1)
 		return ;
 	write(fd, &c, 1);
 }

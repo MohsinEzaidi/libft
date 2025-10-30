@@ -6,7 +6,7 @@
 /*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 08:34:22 by mezzaidi          #+#    #+#             */
-/*   Updated: 2025/10/29 12:29:53 by mezzaidi         ###   ########.fr       */
+/*   Updated: 2025/10/30 11:23:06 by mezzaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ int	ft_checksign(char c)
 	return (1);
 }
 
-int	ft_atoi(char const *str)
+int	ft_atoi(const char *str)
 {
 	int				sign;
-	unsigned long	r;
-	unsigned long	tem;
+	long long		r;
+	long long		tem;
 	size_t			i;
 
 	r = 0;

@@ -6,7 +6,7 @@
 /*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 00:06:58 by mezzaidi          #+#    #+#             */
-/*   Updated: 2025/10/27 00:06:59 by mezzaidi         ###   ########.fr       */
+/*   Updated: 2025/10/29 19:59:16 by mezzaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	char	c;
 
-	if (fd < 0)
+	if (write(fd, NULL, 0) == -1)
 		return ;
 	if (n == -2147483648)
 	{
