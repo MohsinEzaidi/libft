@@ -6,13 +6,13 @@
 /*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 08:34:22 by mezzaidi          #+#    #+#             */
-/*   Updated: 2025/10/30 11:23:06 by mezzaidi         ###   ########.fr       */
+/*   Updated: 2025/11/02 13:33:26 by mezzaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_checksign(char c)
+static int	ft_checksign(char c)
 {
 	if (c == '-')
 		return (-1);

@@ -1,16 +1,6 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/10/30 11:54:26 by mezzaidi          #+#    #+#              #
-#    Updated: 2025/10/30 13:38:38 by mezzaidi         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME = libft.a
+
+HEADER = libft.h
 
 CC = cc
 
@@ -68,21 +58,24 @@ BONUS_OBJ = $(BONUS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(AR) rcs $(NAME) $(OBJ)
+$(NAME): $(OBJ) 
+	$(AR) r $(NAME) $(OBJ)
 
-bonus: $(BONUS_OBJ)
-	$(AR) rcs $(NAME) $(BONUS_OBJ)
+bonus : .bonus
 
-%.o: %.c
+.bonus : $(BONUS_OBJ)
+	ar r $(NAME) $?
+	@touch .bonus
+
+%.o: %.c $(HEADER)
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ) $(BONUS_OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ) .bonus
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: clean

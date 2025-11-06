@@ -6,13 +6,13 @@
 /*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 00:11:27 by mezzaidi          #+#    #+#             */
-/*   Updated: 2025/10/30 11:33:08 by mezzaidi         ###   ########.fr       */
+/*   Updated: 2025/11/02 13:46:14 by mezzaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_wordcount(const char *s, char c)
+static size_t	ft_wordcount(const char *s, char c)
 {
 	size_t	wordcount;
 	size_t	i;
@@ -34,14 +34,7 @@ size_t	ft_wordcount(const char *s, char c)
 	return (wordcount);
 }
 
-size_t	ft_endword(const char *s, size_t i, char c)
-{
-	while (s[i] != c && s[i])
-		i++;
-	return (i);
-}
-
-void	*ft_freeres(char **res)
+static void	*ft_freeres(char **res)
 {
 	size_t	i;
 
@@ -55,7 +48,7 @@ void	*ft_freeres(char **res)
 	return (NULL);
 }
 
-int	ft_fillres(const char *s, char **res, char c)
+static int	ft_fillres(const char *s, char **res, char c)
 {
 	size_t	start;
 	size_t	i;

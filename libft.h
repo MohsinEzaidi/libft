@@ -6,7 +6,7 @@
 /*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 09:08:49 by mezzaidi          #+#    #+#             */
-/*   Updated: 2025/10/30 11:36:47 by mezzaidi         ###   ########.fr       */
+/*   Updated: 2025/10/31 11:07:41 by mezzaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 
 # include <unistd.h> // write()
-# include <limits.h> // ft_calloc()
 # include <stdlib.h> // malloc()
 
 int		ft_atoi(const char *str);

@@ -6,13 +6,13 @@
 /*   By: mezzaidi <mezzaidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 00:03:04 by mezzaidi          #+#    #+#             */
-/*   Updated: 2025/10/27 00:19:07 by mezzaidi         ###   ########.fr       */
+/*   Updated: 2025/11/02 13:32:56 by mezzaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_countdigits(int n)
+static int	ft_countdigits(int n)
 {
 	int	count;
 
@@ -27,7 +27,7 @@ int	ft_countdigits(int n)
 	return (count);
 }
 
-char	*ft_fillresult(int n, char *result, int count, int sign)
+static char	*ft_fillresult(int n, char *result, int count, int sign)
 {
 	int	i;
 
